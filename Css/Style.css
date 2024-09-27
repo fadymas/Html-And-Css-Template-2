@@ -1,3 +1,6 @@
+:root {
+  --main-color: #19c8fa;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,6 +12,7 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: black;
 }
 ul {
   list-style: none;
@@ -34,3 +38,104 @@ ul {
     width: 1170px;
   }
 }
+/* ! Header  */
+
+header {
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-flow: wrap row;
+  min-height: 87px;
+}
+
+header .container .logo img {
+  height: 40px;
+}
+header .container nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav .toggle-menu {
+  color: white;
+  font-size: 22px;
+  display: none;
+}
+@media (max-width: 768px) {
+  header nav .toggle-menu {
+    display: block;
+  }
+  header nav .toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: black;
+    width: 100%;
+    background: rgb(0 0 0 / 50%);
+
+    margin-right: 0px;
+    padding-left: 16px;
+  }
+  header nav .toggle-menu:hover + ul li a {
+    width: calc(100% - 15px);
+    display: block;
+  }
+}
+
+header .container nav ul {
+  display: flex;
+}
+@media (max-width: 769px) {
+  header .container nav ul {
+    display: none;
+  }
+}
+
+header .container nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+  padding: 40px 10px;
+  position: relative;
+  z-index: 3;
+}
+header .container nav ul li .active,
+header .container nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+
+header .container nav .form {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  margin-left: 30px;
+  border-left: 1px solid white;
+}
+header .container nav .form i {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0;
+}
+
+hr {
+  width: 100%;
+  display: inline-block;
+  margin-top: 22.39px;
+}
+/* ! /Header */
